@@ -1,0 +1,33 @@
+.card{
+    width: 70vw;
+    height: 80vh;
+
+    background-color: var(--secondary-color);
+
+    align-self: center;
+    margin: auto;
+
+    border-radius: 15px;
+    box-shadow: -15px 15px 10px rgba(0, 0, 0, 0.5);
+
+    color: var(--text-color);
+}
+
+.card-points{
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+    width: 40%;
+    height: 50px;
+
+    float: right;
+
+    border-left: 5px solid var(--active-color);
+}
+
+.card-graph{
+    height: 100%;
+    width: 45%;
+
+    border-radius: 20px;
+    border: 1px solid var(--text-color);
+}

@@ -1,0 +1,19 @@
+[
+    {
+        "user": {
+            "name": "",
+            "address": "",
+            "contact": "",
+            "image" : "",
+            "points" : 0,
+            "peso"  : 0,
+            "earnings" : {
+                "total" : 0,
+                "daily" : 0,
+                "montly" : 0,
+                "annual" : 0
+            },
+            "monthlyTrashCollection" : 0
+        }
+    }
+]
