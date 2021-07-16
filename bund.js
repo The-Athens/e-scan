@@ -1,4 +1,4 @@
-(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,_module,_exports){
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 var getUserMedia = require('getusermedia')
 
 getUserMedia({
@@ -15,7 +15,7 @@ getUserMedia({
         video.play()
 
     })
-},{"getusermedia":2}],2:[function(require,module,_exports){
+},{"getusermedia":2}],2:[function(require,module,exports){
 // getUserMedia helper by @HenrikJoreteg used for navigator.getUserMedia shim
 var adapter = require('webrtc-adapter');
 
@@ -62,7 +62,9 @@ module.exports = function (constraints, cb) {
         cb(null, stream);
     }).catch(function (err) {
         var error;
-     
+        // coerce into an error object since FF gives us a string
+        // there are only two valid names according to the spec
+        // we coerce all non-denied to "constraint not satisfied".
         if (typeof err === 'string') {
             error = new Error('MediaStreamError');
             if (err === denied || err === altDenied) {
@@ -90,7 +92,7 @@ module.exports = function (constraints, cb) {
     });
 };
 
-},{"webrtc-adapter":4}],3:[function(_require,module,_exports){
+},{"webrtc-adapter":4}],3:[function(require,module,exports){
  /* eslint-env node */
 'use strict';
 
@@ -698,7 +700,7 @@ SDPUtils.isRejected = function(mediaSection) {
 // Expose public methods.
 module.exports = SDPUtils;
 
-},{}],4:[function(require,module,_exports){
+},{}],4:[function(require,module,exports){
 /*
  *  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
  *
@@ -792,7 +794,7 @@ module.exports = SDPUtils;
   }
 })();
 
-},{"./chrome/chrome_shim":5,"./edge/edge_shim":7,"./firefox/firefox_shim":9,"./safari/safari_shim":11,"./utils":12}],5:[function(require,module,_exports){
+},{"./chrome/chrome_shim":5,"./edge/edge_shim":7,"./firefox/firefox_shim":9,"./safari/safari_shim":11,"./utils":12}],5:[function(require,module,exports){
 
 /*
  *  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
@@ -1059,7 +1061,7 @@ module.exports = {
   shimGetUserMedia: require('./getusermedia')
 };
 
-},{"../utils.js":12,"./getusermedia":6}],6:[function(require,module,_exports){
+},{"../utils.js":12,"./getusermedia":6}],6:[function(require,module,exports){
 /*
  *  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
  *
@@ -1259,7 +1261,7 @@ module.exports = function() {
   }
 };
 
-},{"../utils.js":12}],7:[function(require,module,_exports){
+},{"../utils.js":12}],7:[function(require,module,exports){
 /*
  *  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
  *
@@ -2252,7 +2254,7 @@ var edgeShim = {
           return t.mid;
         }).join(' ') + '\r\n';
       }
-      tracks.forEach(function(_mline, sdpMLineIndex) {
+      tracks.forEach(function(mline, sdpMLineIndex) {
         var transceiver = transceivers[sdpMLineIndex];
         sdp += SDPUtils.writeMediaSection(transceiver,
             transceiver.localCapabilities, 'offer', self.localStreams[0]);
@@ -2388,7 +2390,7 @@ module.exports = {
   shimGetUserMedia: require('./getusermedia')
 };
 
-},{"../utils":12,"./getusermedia":8,"sdp":3}],8:[function(_require,module,_exports){
+},{"../utils":12,"./getusermedia":8,"sdp":3}],8:[function(require,module,exports){
 /*
  *  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
  *
@@ -2422,7 +2424,7 @@ module.exports = function() {
   };
 };
 
-},{}],9:[function(require,module,_exports){
+},{}],9:[function(require,module,exports){
 /*
  *  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
  *
@@ -2586,7 +2588,7 @@ module.exports = {
   shimGetUserMedia: require('./getusermedia')
 };
 
-},{"../utils":12,"./getusermedia":10}],10:[function(require,module,_exports){
+},{"../utils":12,"./getusermedia":10}],10:[function(require,module,exports){
 /*
  *  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
  *
@@ -2749,7 +2751,7 @@ module.exports = function() {
   };
 };
 
-},{"../utils":12}],11:[function(_require,module,_exports){
+},{"../utils":12}],11:[function(require,module,exports){
 /*
  *  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
  *
@@ -2779,7 +2781,7 @@ module.exports = {
   // shimPeerConnection: safariShim.shimPeerConnection
 };
 
-},{}],12:[function(_require,module,_exports){
+},{}],12:[function(require,module,exports){
 /*
  *  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
  *

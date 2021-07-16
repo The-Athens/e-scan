@@ -1,7 +1,9 @@
 <%- include('partials/header') %>
 
 <!-- content of the body: -->
-
+<script>
+  var user = JSON.parse(`<%= user %>`)
+</script>
 <div class="card d-flex flex-column">
   <%- include('partials/navbar') %>
   <div class="card-earnings">
@@ -10,15 +12,17 @@
         <h5 class="">Your total earnings: <b id="earnings">0</b> </h5>
       </div>
     </div>
-    <div class="container-fluid p-3 mt-4">
+    <div class="card-graph container-fluid p-3 mt-4">
       <h3 class="title">GRAPHS</h3>
-      <div class="card-graph-box d-flex flex-row justify-content-center align-items-center">
-        <div class="col-6 card-graph card-graph-bar">
+      <div class="card-graph-box d-flex flex-row justify-content-center ">
+        <div class="col-12 card-graphs card-graph-bar">
             <!-- bar graphs -->
+            <canvas id='card-bar-graph' width="90%" height="90%"></canvas>
         </div>
   
-        <div class="col-6 card-graph card-graph-pie">
+        <div class="col-6 card-graphs card-graph-pie">
             <!-- pie graphs -->
+            <canvas id='card-pie-graph' width="90%" height="90%"></canvas>
         </div>
       </div>
     </div>

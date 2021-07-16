@@ -22,9 +22,9 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-    const storage = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/data.json') ))
+    const user = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/data.json') ))
 
-    res.render(path.join(__dirname, 'views/index'), { title: 'home', drawer: storage})
+    res.render(path.join(__dirname, 'views/index'), { title: 'home', user: user})
     res.end()
 })
 

@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon app.js"
+    "serve": "nodemon app.js",
+    "start": "browserify index.js -o bund.js"
   },
   "repository": {
     "type": "git",

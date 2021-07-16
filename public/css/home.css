@@ -24,10 +24,14 @@
     border-left: 5px solid var(--active-color);
 }
 
-.card-graph{
+.card-graphs{
     height: 100%;
     width: 45%;
 
     border-radius: 20px;
     border: 1px solid var(--text-color);
+}
+
+.card-graph{
+    height: 100%;
 }
