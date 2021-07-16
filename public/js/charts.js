@@ -47,6 +47,7 @@ $(async function(){
     } 
 
     let user = await getData()
+    document.querySelector('#earnings').innerHTML = user.points
     if(user){
 
         const ctxBar = document.querySelector('#card-bar-graph').getContext('2d')

@@ -18,26 +18,19 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
 				let data = []
 				let desire = [25, 40]
 
-				// Loop over each pixel and invert the color.
 				for (var i = 0; i < pixels.length; i += 4) {
 					data.push({
 						r: 255 - pixels[i], 
 						g: 255- pixels[i+1], 
 						b: 255 - pixels[i+2]
-					}) // red				
+					}) 				
 				}
-				console.log(data)
 				let model = new Classifier(data, desire)
-				
 
 			}, 2000);
 		}
 		else{
 			clearInterval(requestInterval)
 		}
-
-	
-		
-
 	});
 }

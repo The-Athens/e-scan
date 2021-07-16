@@ -12,6 +12,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
 app.use(cors()) 
+
 app.use('/chartjs', express.static(path.join(__dirname,'/node_modules/chartjs')))
 app.use('/axios', express.static(path.join(__dirname,'/node_modules/axios')))
 app.use('/public', express.static(path.join(__dirname, '/public')))
