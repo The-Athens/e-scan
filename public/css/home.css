@@ -1,6 +1,6 @@
 .card{
-    width: 70vw;
-    height: 80vh;
+    width: 60vw;
+    height: 85vh;
 
     background-color: var(--secondary-color);
 
@@ -30,8 +30,4 @@
 
     border-radius: 20px;
     border: 1px solid var(--text-color);
-}
-
-.card-graph{
-    height: 100%;
 }

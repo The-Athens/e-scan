@@ -1,27 +1,59 @@
-<div class="container">
-    <div class="left-scan">
-      <div class="panel">
-        <ul>
-          <li class="Home">HOME</li>
-          <li class="scan">SCAN</li>
-          <li class="withdraw">WITHDRAW</li>
-        </ul>
+<%- include('../partials/header') %>
+
+  <!-- content of the body: -->
+  <div class="card d-flex flex-column">
+    <%- include('../partials/navbar') %>
+    <div class="card-body d-flex flex-row justify-content-center align-items-center">
+
+      <div class="col-7">
+        <div class="container-fluid">
+          <div id="card-cam">
+            <div id="webcam-container"></div>
+            <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script> -->
+            <video id="vid" autoplay>hey</video>
+            <canvas id="stream-canvas"></canvas>
+            <script type="module" src="/public/js/cams.js"></script> 
+          </div>
+        </div>
+        <div class="card-chem-info mt-3">
+          <h5>Chemical content</h5>
+          <p>
+            PET: <b id="pet"></b> %</p>
+          </p>
+          <p>
+            HDPE: <b id="hdpe"></b> %</p>
+          </p>
+          <p>
+            Carbon footprint: <b><%= output.cFprint %> </b> %</p>
+          </p>
+        </div>  
       </div>
-      <div class="scan-pic">
-       <script src="bund.js"></script>
+      
+      <div class="col-5">
+        <div class="card-info container-fluid p-3 mt-4">
+          <div class="card-info-item container-fluid">
+            <h3 class="title">Human Effect</h3>
+            <div class="info-desc">
+              <p>
+                <%= output.hEffect %>
+              </p>
+            </div>
+          </div>
+          <hr>
+          <div class="card-info-item container-fluid">
+            <h3 class="title">Environmental Effect</h3>
+            <div class="info-desc">
+              <p>
+                <%= output.envEffect %>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="description">
-        <h2>Chemical Control</h2>
-        <p>carbon chuchu</p>
-        <p>sulfur chuhcu</p>
-      </div>
-    </div>
-    <div class="rigth-for-btn">
-      <div class="human-effect">
-        <h3>Human Effect</h3>
-      </div>
-      <div class="environmental-effect">
-        <h3>Environmental Effect</h3>
-      </div>
+            
     </div>
   </div>
+  
+
+  <%- include('../partials/footer') %>

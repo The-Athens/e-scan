@@ -1,0 +1,32 @@
+.info-desc{
+    height: 80%;
+    overflow-y: scroll;
+    
+    padding: 10px;
+    width: 100%;
+    height: 100px;
+    line-height: 25px;
+}
+
+.card-chem > p{
+    padding: 0px;
+    margin: 0px;
+}
+
+video{
+    border-radius: 20px;
+    border: 10px dashed var(--text-color);
+    width: 100%;
+    height: 100%;
+}
+
+::-webkit-scrollbar{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    width: 12px;
+}
+
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--text-color);
+}
