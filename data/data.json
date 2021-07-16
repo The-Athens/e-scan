@@ -10,6 +10,6 @@
         "earnings" : {
             "daily" : [50, 32, 25, 27, 31, 68, 44]
         },
-        "monthlyTrashCollection" : 0
+        "monthlyTrashCollection" : [50, 32, 25, 27, 31, 68, 44]
     }
 }

@@ -22,6 +22,7 @@ app.use('/jquery', express.static(path.join(__dirname, '/node_modules/jquery')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
+
 app.get('/', (req, res) => {
 
     res.render(path.join(__dirname, 'views/index'), { title: 'home'} )
@@ -31,8 +32,7 @@ app.get('/', (req, res) => {
 app.get('/data-request', (req, res) => {
     const user = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/data.json') ))
  
-    res.json(user.user)
-    res.redirect('/')
+    res.status(200).json(user.user)
 })
 
 app.get('/scan', (req, res) => {
