@@ -1,0 +1,15 @@
+{
+    
+    "inpLayer" : 0,
+    "hidLayer" : 0,
+    "outLayer" : 0,
+
+    "learningRate" : 0,
+
+    "biasIH": 0,
+    "biasOH": 0,
+
+    "wieghtsIH" : 0,
+    "wieghtsOH" : 0
+
+}

@@ -12,9 +12,9 @@ body{
   padding: 0%;
   box-sizing: border-box;
   line-height: 1;
-
-  background-color: var(--primary-color);
+  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(https://wonderfulengineering.com/wp-content/uploads/2016/01/nature-wallpapers-38.jpg);
   display: flex;
+
 }
 
 a{

@@ -1,0 +1,31 @@
+.card-withdraw-info-box{
+    height: 50% !important;
+}
+
+.card-withdraw{
+    height: 100%;
+    overflow: hidden;
+}
+
+.card-withdraw-info{
+    padding: 10px;
+    height: 100% !important;
+}
+
+
+.info-descrip{
+    height: 80% !important;
+    width: 100% !important;
+    
+    padding: 20px;
+    width: 250%;
+    height: 300px;
+    line-height: 25px;
+
+    overflow-y: scroll;
+
+}
+
+iframe{
+    border-radius: 20px;
+}

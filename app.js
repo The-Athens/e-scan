@@ -13,6 +13,7 @@ app.use(express.json())
 
 app.use(cors()) 
 
+app.use('/train_dataset', express.static(path.join(__dirname, '/data/train_dataset')))
 app.use('/chartjs', express.static(path.join(__dirname,'/node_modules/chartjs')))
 app.use('/axios', express.static(path.join(__dirname,'/node_modules/axios')))
 app.use('/public', express.static(path.join(__dirname, '/public')))
@@ -57,8 +58,54 @@ app.get('/scan', (req, res) => {
 app.get('/withdraw', (req, res) => {
     const storage = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/data.json') ))
 
-    res.render(path.join(__dirname, 'views/pages/withdraw'), { title: 'withdraw'})
+    const outputs = {
+      
+        Benefit: `Reducing the use of plastic is important because plastic production requires an enormous amount of energy and resources. This causes carbon emissions and contributes to global warming.
+        Recycling plastic is not efficient – only 9% of plastic ever produced has been recycled. About 60% is discarded in landfills and oceans. There, it stays for thousands of years, transforming into “microplastic,” leaching into our water supplies and food.
+        These are just a few reasons. In this article, we will observe a few crucial points on why it’s important to reduce plastic waste. 
+        We will go through, Plastic manufacturing requires a massive industrial process, which leads to various environmental and social impacts.
+        First off, we get the vast majority of plastics from non-renewable fossil fuels, by processing oil to obtain the raw material for plastics.
+        A study calculated that we use around 4% of the world’s petroleum to make plastic, and another 4% to power plastic manufacturing processes.
+        It might sound like little, but from 1950 to 2012, plastics production increased – from about 1.7 million tons to nearly 300 million tons per year.
+        There are three main stages of a product life cycle – production, use phase, and waste management. 
+        A substantial percentage of plastics are designed for single use. So after a quick “convenient” use, it goes directly to the trash.  
+        Local air quality and pollution can directly impact the quality of life of people. Lacking technical health standards exposes people and workers (in recycling facilities) to a range of pollutants, injuries, infections, and other severe health problems that contribute to low life expectancy.`,
+                        //https://www.almostzerowaste.com/reduce-plastic-waste//
+    }
+
+   
+    res.render(path.join(__dirname, 'views/pages/withdraw'), { title: 'withdraw', output1: outputs})
     res.end()
+})
+
+app.get('/get-neural-state', async (req, res) => {
+    try{
+        const state = fs.readFile( path.join(__dirname, '/data/neural_state.json') ) 
+        state = JSON.parse(state)
+        return res.state(200).json( state )
+    }
+    catch(err){
+        console.log(err)
+    }
+
+    return res.end()
+})
+
+app.post('/set-neural-state', async (req, res) => {
+    console.log(req.body)
+    const data = JSON.stringify( req.body )
+
+    try{
+        fs.writeFile(path.join(__dirname, '/data/neural_state.json'), data)
+        return res.state(200).json({
+            state: 200
+        })
+    }
+    catch( err ){
+        console.log(err)
+    }
+
+    return res.end()
 })
 
 // // Saves picture for capture image requests

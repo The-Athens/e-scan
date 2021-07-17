@@ -31,3 +31,67 @@
     border-radius: 20px;
     border: 1px solid var(--text-color);
 }
+
+
+
+
+/*--------------------------------------------withdraw--------------------*/
+
+.with{
+    width: 60vw;
+    height: 85vh;
+
+    background-color: var(--secondary-color);
+    align-self: center;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: -15px 15px 10px rgba(0, 0, 0, 0.5);
+   
+    color: var(--text-color);
+}
+
+.card-token{
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+    width: 40%;
+    height: 50px;
+    float: left;
+    border-left: 10px solid var(--active-color);
+  
+}
+.card-amount{
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+    width: 40%;
+    height: 50px;
+    float: right;
+    border-right: 10px solid var(--active-color);
+    
+}
+
+.with_button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px  var(--active-color);
+}
+  
+.with_button:hover {background-color: #3e8e41}
+
+.with_button:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
+
+h4{
+    color:  #f1c40f;
+    font-weight: 700;
+}

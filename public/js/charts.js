@@ -48,7 +48,7 @@ $(async function(){
 
     let user = await getData()
     document.querySelector('#earnings').innerHTML = user.points
-    if(user){
+    if(user && document.location.pathname === '/'){
 
         const ctxBar = document.querySelector('#card-bar-graph').getContext('2d')
         const ctxPolar = document.querySelector('#card-pie-graph').getContext('2d')
